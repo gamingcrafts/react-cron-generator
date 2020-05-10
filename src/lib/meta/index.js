@@ -24,19 +24,24 @@ const defaultTabs = [HEADER_VALUES.MINUTES, HEADER_VALUES.HOURLY, HEADER_VALUES.
 
 export const metadata = [{
     component: Minutes,
-    initialCron: ['0','0/1','*','*','*','?','*']
+    initialCron: ['0','0/1','*','*','*','?','*'],
+    name: "Minutes"
 }, {
     component: Hourly,
-    initialCron: ['0','0','00','1/1','*','?','*']
+    initialCron: ['0','0','00','1/1','*','?','*'],
+    name: "Hourly"
 }, {
     component: Daily,
-    initialCron: ['0','0','00','1/1','*','?','*']
+    initialCron: ['0','0','00','1/1','*','?','*'],
+    name: "Daily"
 }, {
     component: Weekly,
-    initialCron: ['0','0','00','?','*','*','*']
+    initialCron: ['0','0','00','?','*','*','*'],
+    name: "Weekly"
 }, {
     component: Monthly,
-    initialCron: ['0','0','00','1','1/1','?','*']
+    initialCron: ['0','0','00','1','1/1','?','*'],
+    name: "Monthly"
 }];
 
 const validateHeaders = (headers) => {

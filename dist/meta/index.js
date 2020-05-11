@@ -10,7 +10,7 @@ export var HEADER = {
   WEEKLY: 'WEEKLY',
   MONTHLY: 'MONTHLY'
 };
-var HEADER_VALUES = {
+export var HEADER_VALUES = {
   MINUTES: 'Minutes',
   HOURLY: 'Hourly',
   DAILY: 'Daily',

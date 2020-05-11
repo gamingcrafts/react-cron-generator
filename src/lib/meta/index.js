@@ -12,7 +12,7 @@ export const HEADER = {
     MONTHLY: 'MONTHLY'
 };
 
-const HEADER_VALUES = {
+export const HEADER_VALUES = {
     MINUTES: 'Minutes',
     HOURLY: 'Hourly',
     DAILY: 'Daily',

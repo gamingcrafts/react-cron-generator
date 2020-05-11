@@ -1,7 +1,7 @@
 /* eslint-disable react/no-direct-mutation-state */
 import React, { Component } from 'react';
 import cronstrue from 'cronstrue/i18n';
-import { metadata, loadHeaders } from './meta';
+import { metadata, loadHeaders, HEADER_VALUES} from './meta';
 import './cron-builder.css';
 
 export default class Cron extends Component {
@@ -17,24 +17,24 @@ export default class Cron extends Component {
     componentWillMount() {
         if(!this.props.value || this.props.value.split(' ').length !== 7 ) {
             this.state.value = ['0','0','00','1/1','*','?','*']
-            this.state.selectedTab = this.state.headers[0];
+            this.state.selectedTab = HEADER_VALUES.DAILY;
             this.parentChange(this.state.value);
         } else  {
             this.state.value = this.props.value.replace(/,/g, '!').split(' ');
         }
         let val = this.state.value;
         if((val[1].search('/') !== -1) && (val[2] === '*') && (val[3] === '1/1')) {
-            this.state.selectedTab = this.state.headers[0];
+            this.state.selectedTab = HEADER_VALUES.DAILY;
         } else if((val[3] === '1/1')) {
-            this.state.selectedTab = this.state.headers[1];
+            this.state.selectedTab = HEADER_VALUES.DAILY;
         } else if((val[3].search('/') !== -1) || (val[5] === 'MON-FRI')) {
-            this.state.selectedTab = this.state.headers[2];
+            this.state.selectedTab = HEADER_VALUES.DAILY;
         } else if (val[3] === '?') {
-            this.state.selectedTab = this.state.headers[3];
+            this.state.selectedTab = HEADER_VALUES.WEEKLY;
         } else if (val[3].startsWith('L') || val[4] === '1/1') {
-            this.state.selectedTab = this.state.headers[4];
+            this.state.selectedTab = HEADER_VALUES.MONTHLY;
         } else {
-            this.state.selectedTab = this.state.headers[0];
+            this.state.selectedTab = HEADER_VALUES.DAILY;
         }
         
         if(this.props.translateFn && !this.props.locale) {
@@ -83,7 +83,7 @@ export default class Cron extends Component {
         if(metadata[index] === -1) {
             return;
         }
-        return metadata[index].initialCron;
+        return metadata.find(data => data.name === tab).initialCron;
     }
 
     getComponent(tab) {

@@ -24,9 +24,9 @@ export default class Cron extends Component {
         }
         let val = this.state.value;
         if((val[1].search('/') !== -1) && (val[2] === '*') && (val[3] === '1/1')) {
-            this.state.selectedTab = HEADER_VALUES.DAILY;
+            this.state.selectedTab = HEADER_VALUES.MINUTES;
         } else if((val[3] === '1/1')) {
-            this.state.selectedTab = HEADER_VALUES.DAILY;
+            this.state.selectedTab = HEADER_VALUES.HOURLY;
         } else if((val[3].search('/') !== -1) || (val[5] === 'MON-FRI')) {
             this.state.selectedTab = HEADER_VALUES.DAILY;
         } else if (val[3] === '?') {

@@ -4,7 +4,7 @@ import Cron from './lib';
 import { HEADER } from './lib/meta';
 
 const options = {
-  headers: [HEADER.DAILY, HEADER.WEEKLY, HEADER.MONTHLY]
+  headers: [HEADER.HOURLY,HEADER.DAILY, HEADER.WEEKLY, HEADER.MONTHLY]
 };
 
 class App extends Component {

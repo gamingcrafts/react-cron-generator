@@ -23,7 +23,19 @@ var Minutes = /*#__PURE__*/function (_Component) {
         className: "minutes",
         onChange: this.props.onChange ? this.props.onChange : function () {},
         value: this.props.value
-      }, this.buildOptions());
+      }, /*#__PURE__*/React.createElement("option", {
+        key: 0,
+        id: 0
+      }, "00"), /*#__PURE__*/React.createElement("option", {
+        key: 15,
+        id: 15
+      }, "15"), /*#__PURE__*/React.createElement("option", {
+        key: 30,
+        id: 30
+      }, "30"), /*#__PURE__*/React.createElement("option", {
+        key: 45,
+        id: 45
+      }, "45"));
     }
   }, {
     key: "buildOptions",

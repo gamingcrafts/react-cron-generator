@@ -4,7 +4,10 @@ export default class Minutes extends Component {
 
     render() {
         return (<select disabled={this.props.disabled === true ? true : false} className="minutes" onChange={this.props.onChange ? this.props.onChange : () => {}} value={this.props.value} >
-            {this.buildOptions()}
+            <option key={0} id={0}>{`00`}</option>
+            <option key={15} id={15}>{`15`}</option>
+            <option key={30} id={30}>{`30`}</option>
+            <option key={45} id={45}>{`45`}</option>
         </select>)
     }
 

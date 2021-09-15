@@ -42,10 +42,10 @@ var Cron = /*#__PURE__*/function (_Component) {
 
       if (val[1].search('/') !== -1 && val[2] === '*' && val[3] === '1/1') {
         this.state.selectedTab = HEADER_VALUES.MINUTES;
-      } else if (val[3] === '1/1') {
-        this.state.selectedTab = HEADER_VALUES.HOURLY;
       } else if (val[3].search('/') !== -1 || val[5] === 'MON-FRI') {
         this.state.selectedTab = HEADER_VALUES.DAILY;
+      } else if (val[3] === '1/1') {
+        this.state.selectedTab = HEADER_VALUES.HOURLY;
       } else if (val[3] === '?') {
         this.state.selectedTab = HEADER_VALUES.WEEKLY;
       } else if (val[3].startsWith('L') || val[4] === '1/1') {

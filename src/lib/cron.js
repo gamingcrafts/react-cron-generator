@@ -71,7 +71,10 @@ export default class Cron extends Component {
     }
 
     getVal() {
-        let val = cronstrue.toString(this.state.value.toString().replace(/,/g,' ').replace(/!/g, ','), { locale: this.state.locale })
+        let val = cronstrue.toString(this.state.value.toString().replace(/,/g,' ').replace(/!/g, ','), {
+            locale: this.state.locale,
+            throwExceptionOnParseError: false
+        })
         if(val.search('undefined') === -1) {
             return val;
         }

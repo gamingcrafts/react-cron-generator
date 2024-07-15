@@ -109,7 +109,8 @@ var Cron = /*#__PURE__*/function (_Component) {
     key: "getVal",
     value: function getVal() {
       var val = cronstrue.toString(this.state.value.toString().replace(/,/g, ' ').replace(/!/g, ','), {
-        locale: this.state.locale
+        locale: this.state.locale,
+        throwExceptionOnParseError: false
       });
 
       if (val.search('undefined') === -1) {

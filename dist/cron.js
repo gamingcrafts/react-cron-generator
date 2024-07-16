@@ -108,16 +108,19 @@ var Cron = /*#__PURE__*/function (_Component) {
   }, {
     key: "getVal",
     value: function getVal() {
-      var val = cronstrue.toString(this.state.value.toString().replace(/,/g, ' ').replace(/!/g, ','), {
-        locale: this.state.locale,
-        throwExceptionOnParseError: false
-      });
+      try {
+        var val = cronstrue.toString(this.state.value.toString().replace(/,/g, ' ').replace(/!/g, ','), {
+          locale: this.state.locale
+        });
 
-      if (val.search('undefined') === -1) {
-        return val;
+        if (val.search('undefined') === -1) {
+          return val;
+        }
+
+        return '-';
+      } catch (err) {
+        return '-';
       }
-
-      return '-';
     }
   }, {
     key: "defaultValue",
